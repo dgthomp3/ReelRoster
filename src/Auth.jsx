@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
+import Home from "./Home";
 
 export default function Auth() {
     const [error, setError] = useState(null);
+    const [showHomeComponent, setShowHomeComponent] = useState(false);
+
+    const handleEnterClick = () => {
+        setShowHomeComponent(true);
+    }
 
     useEffect(() => {
         const options = {
@@ -21,12 +27,17 @@ export default function Auth() {
             });
     }, []);
 
+    if (showHomeComponent) {
+        return <Home />
+    };
+
     return (
         <div>
             {!error ? (
                 <>
                     <h1>Welcome!</h1>
                     <h4>Token Accepted</h4>
+                    <button onClick={handleEnterClick}>Enter</button>
                 </> 
             ) : (
                 <h1>Error: Unable to Authenticate</h1>
