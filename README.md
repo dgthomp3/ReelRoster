@@ -13,7 +13,8 @@ ReelRoster is a web application designed to help users discover and organize mov
 ### Tech Stack
 
 * React + Vite
-* TMDb API 
+* React Router
+* TMDb API
 
 ### Getting Started
 
