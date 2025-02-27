@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import Home from "./Home";
+import Home from "./HomeComponent";
+import { useNavbar } from "./NavbarContext";
 
-export default function Auth() {
+export default function AuthComponent() {
     const [error, setError] = useState(null);
     const [showHomeComponent, setShowHomeComponent] = useState(false);
+    const { setShowNavbar } = useNavbar();
 
     const handleEnterClick = () => {
         setShowHomeComponent(true);
+        setShowNavbar(true);
     }
 
     useEffect(() => {
@@ -14,7 +17,7 @@ export default function Auth() {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: `Bearer ${import.meta.env.VITE_TMBD_READ_ACCESS}`
+                Authorization: `Bearer ${import.meta.env.VITE_TMDB_READ_ACCESS}`
             }
         };
       
