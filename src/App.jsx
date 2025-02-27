@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 import Auth from './Auth'
 
-function App() {
+export default function App() {
   return (
     <Router>
       <nav>
@@ -14,6 +14,4 @@ function App() {
       </Routes>
     </Router>
   )
-}
-
-export default App
+};
