@@ -5,6 +5,21 @@
   text-align: center;
 }
 
+header {
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+  position: fixed;  /* Keeps navbar at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

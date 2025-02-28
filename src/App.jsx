@@ -10,7 +10,7 @@ function Navbar() {
     if (!showNavbar) return null;
 
     return (
-        <nav>
+        <nav className='navbar'>
           <Link to="/">Home</Link>
         </nav>
     );
@@ -20,10 +20,15 @@ export default function App() {
     return (
         <NavbarProvider>
             <Router>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Auth />} />
-                </Routes>
+                <header>
+                  <Navbar />
+                </header>
+
+                <main>
+                  <Routes>
+                      <Route path="/" element={<Auth />} />
+                  </Routes>
+                </main>
             </Router>
         </NavbarProvider>
     )
