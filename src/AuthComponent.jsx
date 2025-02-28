@@ -5,6 +5,7 @@ import { useNavbar } from "./NavbarContext";
 export default function AuthComponent() {
     const [error, setError] = useState(null);
     const [showHomeComponent, setShowHomeComponent] = useState(false);
+
     const { setShowNavbar } = useNavbar();
 
     const handleEnterClick = () => {

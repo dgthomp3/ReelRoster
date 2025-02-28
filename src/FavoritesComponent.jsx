@@ -1,4 +1,4 @@
 
-export default function FavoriteComponent() {
+export default function FavoritesComponent() {
     
 };
