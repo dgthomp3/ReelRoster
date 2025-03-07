@@ -5,15 +5,15 @@ import { useNavbar } from "./NavbarContext";
 export default function AuthComponent() {
     const [error, setError] = useState(null);
     const [showHomeComponent, setShowHomeComponent] = useState(
-        () => localStorage.getItem("seenWelcome") === "false"
+        localStorage.getItem("hasEntered") === "true"
     );
 
-    const { setShowNavbar, setUsername } = useNavbar();
+    const { setShowNavbar } = useNavbar();
 
     const handleEnterClick = () => {
+        localStorage.setItem("hasEntered", "true");
         setShowHomeComponent(true);
         setShowNavbar(true);
-        localStorage.setItem("seenWelcome", "true");
     }
 
     useEffect(() => {
@@ -25,21 +25,18 @@ export default function AuthComponent() {
             }
         };
       
-        fetch('https://api.themoviedb.org/3/account/21845502', options)
+        fetch('https://api.themoviedb.org/3/authentication', options)
             .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                setUsername(data.username); // Set the username from API response
-            })
+            .then((data) => console.log(data))
             .catch((err) => {
-                console.error('Error fetching account info: ', err);
+                console.error('Error fetching authentication: ', err);
                 setError(err.message);
             });
     }, []);
 
     if (showHomeComponent) {
-        return <Home />
-    };
+        return <Home />;
+    }
 
     return (
         <div>

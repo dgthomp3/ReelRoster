@@ -10,8 +10,6 @@ function Navbar() {
     const { showNavbar, username } = useNavbar();
     const [avatar, setAvatar] = useState(null);
 
-    if (!showNavbar) return null;
-
     useEffect(() => {
         const options = {
             method: 'GET',
@@ -27,12 +25,12 @@ function Navbar() {
                 console.log(data);
                 if (data.avatar?.tmdb?.avatar_path) {
                     setAvatar(`https://image.tmdb.org/t/p/w200${data.avatar.tmdb.avatar_path}`);
-                } else {
-                    setAvatar("/default-avatar.png"); // Use a default avatar
                 }
             })
             .catch(err => console.error(err));
-    }, [])
+    }, []);
+
+    if (!showNavbar) return null;
 
     return (
         <nav className='navbar'>
