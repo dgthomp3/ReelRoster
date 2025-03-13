@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import MovieComponent from "./MovieComponent";
 
-export default function FavoritesComponent() {
-    const [ favorites, setFavorites ] = useState([])
+export default function WatchlistComponent() {
+    const [ watchlist, setWatchlist ] = useState([]);
 
-    useEffect(() => {    
+    useEffect(() => {
         const options = {
             method: 'GET',
             headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${import.meta.env.VITE_TMDB_READ_ACCESS}`
+              accept: 'application/json',
+              Authorization: `Bearer ${import.meta.env.VITE_TMDB_READ_ACCESS}`
             }
-        };
-        
-        fetch(`https://api.themoviedb.org/3/account/${import.meta.env.VITE_ACCT_ID}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`, options)
+          };
+          
+          fetch(`https://api.themoviedb.org/3/account/${import.meta.env.VITE_ACCT_ID}/watchlist/movies?language=en-US&page=1&sort_by=created_at.asc`, options)
             .then(res => res.json())
             .then(data => {
                 if (data.results) {
@@ -26,17 +26,17 @@ export default function FavoritesComponent() {
                             rating: movie.vote_average
                         }));
 
-                    setFavorites(movieList);
+                    setWatchlist(movieList);
                 }
             })
             .catch(err => console.error(err));
-    }, []);
+    });
 
     return (
         <div>
-            <h2>Here's Some of Your Favs!</h2>
+            <h2>Any changes to your Watchlist?</h2>
             <div className="movie-container">
-                {favorites.map((movie) => (
+                {watchlist.map((movie) => (
                     <MovieComponent 
                         key={movie.id} 
                         title={movie.title} 

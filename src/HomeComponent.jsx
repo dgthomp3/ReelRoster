@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import MovieComponent from "./MovieComponent";
-import PopularComponent from "./PopularComponent";
+import FavoritesComponent from "./FavoritesComponent";
+import UpcomingComponent from "./UpcomingComponent";
+import WatchlistComponent from "./WatchlistComponent";
 
 export default function HomeComponent() {
     const [username, setUserName] = useState(null);
@@ -15,7 +16,7 @@ export default function HomeComponent() {
             }
           };
           
-        fetch('https://api.themoviedb.org/3/account/21845502', options)
+        fetch(`https://api.themoviedb.org/3/account/${import.meta.env.VITE_ACCT_ID}`, options)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -27,7 +28,9 @@ export default function HomeComponent() {
     return (
         <>
             <h1>Home</h1>
-            <h4>Hello, {username}!</h4>
+            <UpcomingComponent />
+            <WatchlistComponent />
+            <FavoritesComponent />
         </>
     );
 };
