@@ -3,6 +3,11 @@ import MovieComponent from "./MovieComponent";
 
 export default function UpcomingComponent() {
     const [ upcoming, setUpcoming ] = useState([]);
+    const todayUTC = Date.UTC(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate()
+    );
 
     const formatDate = (dateString) => {
         const options = { year: "numeric", month: "long", day: "numeric" };
@@ -21,6 +26,11 @@ export default function UpcomingComponent() {
         return `Releasing in ${differenceInDays} days!`;
     };
 
+    const toUTCDate = (dateString) => {
+        const date = new Date(dateString);
+        return Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+    };
+
     useEffect(() => {
         const options = {
             method: 'GET',
@@ -34,12 +44,14 @@ export default function UpcomingComponent() {
             .then(res => res.json())
             .then(data => {
                 const movieList = data.results
-                    .filter(movie => new Date(movie.release_date) > new Date())
+                    .filter(movie => toUTCDate(movie.release_date) >= todayUTC)
                     .slice(0, 5)
                     .map((movie) => ({
                         id: movie.id,
                         title: movie.title,
-                        poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+                        poster: movie.poster_path 
+                            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                            : '/assets/placeholder-movieimage.png',
                         release: movie.release_date
                     }));
 
