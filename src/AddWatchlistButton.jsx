@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AddWatchlistButton() {
+export default function AddWatchlistButton({ movieId }) {
     const [isAdded, setIsAdded] = useState(false);
 
     const handleWatchlistToggle = async () => {
@@ -13,7 +13,7 @@ export default function AddWatchlistButton() {
             },
             body: JSON.stringify({
                 media_type: "movie",
-                media_id: movieId,
+                media_id: movieId, // Replace this with your dynamic movie ID
                 watchlist: !isAdded,
             }),
         };

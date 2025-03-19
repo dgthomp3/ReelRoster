@@ -22,7 +22,9 @@ export default function FavoritesComponent() {
                         .map((movie) => ({
                             id: movie.id,
                             title: movie.title,
-                            poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+                            poster: movie.poster_path 
+                            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                            : '/assets/placeholder-movieimage.png',
                             rating: movie.vote_average
                         }));
 
@@ -38,7 +40,8 @@ export default function FavoritesComponent() {
             <div className="movie-container">
                 {favorites.map((movie) => (
                     <MovieComponent 
-                        key={movie.id} 
+                        key={movie.id}
+                        id={movie.id}
                         title={movie.title} 
                         poster={movie.poster} 
                         rating={movie.rating} 

@@ -74,6 +74,7 @@ export default function UpcomingComponent() {
                         </div>
     
                         <MovieComponent
+                            id={movie.id}
                             title={movie.title}
                             poster={movie.poster}
                             rating={'N/A'}

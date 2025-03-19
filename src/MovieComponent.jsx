@@ -1,4 +1,4 @@
-import AddWatchlistButton from "./AddWatchlistComponent";
+import AddWatchlistButton from "./AddWatchlistButton";
 
 export default function MovieComponent({ id, title, poster, rating }) {
     const displayRating = rating === "NR" || rating == null ? "N/A" : rating;
