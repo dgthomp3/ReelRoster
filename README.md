@@ -2,12 +2,11 @@
 
 ## Project Overview
 
-ReelRoster is a web application designed to help users discover and organize movies effortlessly. By leveraging the TMDb API, ReelRoster provides a seamless experience for browsing movie details, searching for films, and managing personal watchlists.
+ReelRoster is a web application designed to help users discover and organize movies effortlessly. By leveraging the TMDb API, ReelRoster provides a seamless experience for browsing movie details and managing personal watchlists.
 
 ### Key Features
 
-* **Search for Movies** – Find movies by title, genre, or keyword.
-* **Detailed Movie Information** – View ratings, overviews, and trailers.
+* **Detailed Movie Information** – View ratings, titles, and release dates.
 * **Watchlist Management** – Save movies to revisit later.
 * **Favorites Collection** – Build a personal list of favorite movies with an easy toggle.
 * **Trending Movies** – Explore popular and top-rated films in real time.
@@ -17,7 +16,6 @@ ReelRoster is a web application designed to help users discover and organize mov
 * React + Vite
 * React Router
 * TMDb API
-* TailwindCSS (optional for styling improvements)
 
 ---
 
@@ -65,6 +63,8 @@ npm run dev
 
 ## Future Enhancements
 
+* **Search Feature** - Enable searching directly on the application.
 * **Movie Trailers** – Add an embedded trailer section.
 * **Genre Filters** – Browse movies by genre with ease.
+* **Integrated Friend's List** - Add capabilities for user's to make accounts and maintain a friend's list.
 * **Dark Mode Toggle** – A slick, user-friendly light/dark theme switch.
