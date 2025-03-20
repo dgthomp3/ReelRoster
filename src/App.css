@@ -9,7 +9,7 @@ header {
   width: 100%;
   background-color: #333;
   padding: 10px 0;
-  position: fixed;  /* Keeps navbar at the top */
+  position: fixed;  
   top: 0;
   left: 0;
   z-index: 1000;
@@ -17,7 +17,7 @@ header {
 
 .navbar {
   display: flex;
-  gap: 20px; /* Adds space between links */
+  gap: 20px; 
   background-color: #333;
 }
 
@@ -114,16 +114,15 @@ h4 {
   background: none;
   border: none;
   cursor: pointer;
-  position: absolute; /* Pin to the card */
-  bottom: 5px; /* Lock near the bottom */
-  right: 5px; /* Lock near the right */
+  position: absolute; 
+  bottom: 5px; 
+  right: 5px; 
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Icon styling stays clean */
 .watchlist-btn img {
   width: 24px;
   height: 24px;
@@ -131,12 +130,10 @@ h4 {
   transition: transform 0.2s ease-in-out;
 }
 
-/* Hover effect */
 .watchlist-btn:hover img {
   transform: scale(1.1);
 }
 
-/* Style when movie is added to watchlist */
 .watchlist-btn.added img {
   filter: brightness(0.8) saturate(1.2);
 }
@@ -147,7 +144,7 @@ h4 {
   cursor: pointer;
   position: absolute;
   bottom: 5px;
-  left: 5px; /* Puts this on the bottom-left to balance with watchlist on the right */
+  left: 5px;
   padding: 0;
   display: flex;
   align-items: center;

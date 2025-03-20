@@ -14,7 +14,7 @@ export default function TopRatedComponent() {
             },
           };
           
-          // Populate the popular list with necessary info
+          // Populate the top-rated list with necessary info
           fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
             .then(res => res.json())
             .then(data => {

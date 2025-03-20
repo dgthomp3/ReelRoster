@@ -41,7 +41,7 @@ export default function AddWatchlistButton({ movieId }) {
             },
             body: JSON.stringify({
                 media_type: "movie",
-                media_id: movieId, // Replace this with your dynamic movie ID
+                media_id: movieId, 
                 watchlist: !isAdded,
             }),
         };
