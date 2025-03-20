@@ -66,5 +66,6 @@ npm run dev
 * **Search Feature** - Enable searching directly on the application.
 * **Movie Trailers** – Add an embedded trailer section.
 * **Genre Filters** – Browse movies by genre with ease.
-* **Integrated Friend's List** - Add capabilities for user's to make accounts and maintain a friend's list.
+* **Integrated Friend's List** - Add capabilities for users to make accounts and maintain a friend's list.
+* **Add Ratings** - Allo users to rate movies directly on the application.
 * **Dark Mode Toggle** – A slick, user-friendly light/dark theme switch.
