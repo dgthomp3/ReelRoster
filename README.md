@@ -47,15 +47,19 @@ VITE_TMDB_READ_ACCESS=<YOUR_READ_ACCESS_TOKEN>
 VITE_ACCT_ID=<YOUR_ACCOUNT_ID>
 ```
 
+### Run Project
+``` bash
+npm run dev
+```
+
 ---
 
 ## Use Cases
 
 1. **Personal Watchlist Management** – Keep track of movies you plan to watch using the dynamic 'Add/Remove to Watchlist' button.
 2. **Favorites Collection** – Curate a list of all-time favorites, quickly toggling between 'Add' and 'Remove' with color indicators.
-3. **Movie Discovery** – Explore trending, popular, or top-rated films and dive into detailed movie information, including ratingsß.
-4. **Quick Movie Comparisons** – Easily compare movies on your watchlist by toggling between them to check key details like genre, runtime, and rating.
-5. **Session Persistence** – Return later and find your watchlist and favorites intact, ensuring data persistence for a smoother experience.
+3. **Movie Discovery** – Explore trending, popular, or top-rated films and dive into detailed movie information, including ratings.
+4. **Session Persistence** – Return later and find your watchlist and favorites intact, ensuring data persistence for a smoother experience.
 
 ---
 
