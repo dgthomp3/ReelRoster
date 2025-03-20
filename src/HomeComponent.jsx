@@ -27,7 +27,7 @@ export default function HomeComponent() {
 
     return (
         <>
-            <h1>Home</h1>
+            <h1>Welcome!</h1>
             <UpcomingComponent />
             <WatchlistComponent />
             <FavoritesComponent />

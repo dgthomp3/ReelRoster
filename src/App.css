@@ -42,6 +42,7 @@ header {
 }
 
 .movie-card {
+  position: relative; 
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 10px;
@@ -49,6 +50,10 @@ header {
   text-align: center;
   background-color: #222;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 .movie-poster {
@@ -103,4 +108,63 @@ h4 {
   font-weight: bold;
   color: #ff9800;
   margin-bottom: 8px;
+}
+
+.watchlist-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute; /* Pin to the card */
+  bottom: 5px; /* Lock near the bottom */
+  right: 5px; /* Lock near the right */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon styling stays clean */
+.watchlist-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.watchlist-btn:hover img {
+  transform: scale(1.1);
+}
+
+/* Style when movie is added to watchlist */
+.watchlist-btn.added img {
+  filter: brightness(0.8) saturate(1.2);
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  left: 5px; /* Puts this on the bottom-left to balance with watchlist on the right */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.favorite-btn:hover img {
+  transform: scale(1.1);
+}
+
+.favorite-btn.added img {
+  filter: brightness(0.8) saturate(1.2);
 }

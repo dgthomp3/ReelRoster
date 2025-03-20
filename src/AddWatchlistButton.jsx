@@ -1,7 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AddWatchlistButton({ movieId }) {
     const [isAdded, setIsAdded] = useState(false);
+
+    const checkWatchlist = async () => {
+        const options = {
+            method: "GET",
+            headers: {
+                accept: "application/json",
+                Authorization: `Bearer ${import.meta.env.VITE_TMDB_READ_ACCESS}`,
+            },
+        };
+
+        try {
+            const response = await fetch(
+                `https://api.themoviedb.org/3/account/${import.meta.env.VITE_ACCT_ID}/watchlist/movies?language=en-US&page=1`,
+                options
+            );
+            const data = await response.json();
+
+            // Check if the current movie is already in the watchlist
+            const movieInWatchlist = data.results.some((movie) => movie.id === movieId);
+            setIsAdded(movieInWatchlist);
+        } catch (error) {
+            console.error("Error checking watchlist:", error);
+        }
+    };
+
+    useEffect(() => {
+        checkWatchlist();
+    }, []);
 
     const handleWatchlistToggle = async () => {
         const options = {
@@ -40,7 +68,9 @@ export default function AddWatchlistButton({ movieId }) {
             className={`watchlist-btn ${isAdded ? "added" : ""}`}
             onClick={handleWatchlistToggle}
         >
-            {isAdded ? "Remove from Watchlist" : "Add to Watchlist"}
+            {isAdded ? 
+                <img src="/minus.png" alt="Remove from Watchlist" /> : 
+                <img src="/plus.png" alt="Add to Watchlist" /> }
         </button>
     );
 };

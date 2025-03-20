@@ -1,3 +1,4 @@
+import AddFavoriteButton from "./AddFavoriteButton";
 import AddWatchlistButton from "./AddWatchlistButton";
 
 export default function MovieComponent({ id, title, poster, rating }) {
@@ -10,6 +11,7 @@ export default function MovieComponent({ id, title, poster, rating }) {
             <p className="movie-rating">Rating: {displayRating}</p>
 
             <AddWatchlistButton movieId={id} />
+            <AddFavoriteButton movieId={id} />
         </div>
     );
 }

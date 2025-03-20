@@ -24,7 +24,7 @@ export default function TopRatedComponent() {
                         title: movie.title,
                         poster: movie.poster_path 
                             ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                            : '/assets/placeholder-movieimage.png',
+                            : '/placeholder-movieimage.png',
                         rating: movie.vote_average
                     }));
 

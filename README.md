@@ -53,7 +53,7 @@ VITE_ACCT_ID=<YOUR_ACCOUNT_ID>
 
 1. **Personal Watchlist Management** – Keep track of movies you plan to watch using the dynamic 'Add/Remove to Watchlist' button.
 2. **Favorites Collection** – Curate a list of all-time favorites, quickly toggling between 'Add' and 'Remove' with color indicators.
-3. **Movie Discovery** – Explore trending, popular, or top-rated films and dive into detailed movie information, including ratings and synopses.
+3. **Movie Discovery** – Explore trending, popular, or top-rated films and dive into detailed movie information, including ratingsß.
 4. **Quick Movie Comparisons** – Easily compare movies on your watchlist by toggling between them to check key details like genre, runtime, and rating.
 5. **Session Persistence** – Return later and find your watchlist and favorites intact, ensuring data persistence for a smoother experience.
 
@@ -63,5 +63,4 @@ VITE_ACCT_ID=<YOUR_ACCOUNT_ID>
 
 * **Movie Trailers** – Add an embedded trailer section.
 * **Genre Filters** – Browse movies by genre with ease.
-* **User Reviews** – Allow users to leave and view comments.
 * **Dark Mode Toggle** – A slick, user-friendly light/dark theme switch.
